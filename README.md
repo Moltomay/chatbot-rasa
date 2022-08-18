@@ -36,7 +36,7 @@ $ rasa train --fixed-model-name cnss_chatbot_ml"
 $ rasa run -p 5007 -m models --enable-api --cors "*" --debug
 
 ```
-4- On a different anaconda prompt terminal enter the following command to activate actions : $ rasa run actions
+4- On a different anaconda prompt terminal enter the following command to activate actions : ``` $ rasa run actions```
 
 5- Open the index.html file in the "Rasa Webchat interface ML" folder, you should have a page with the chatbot widget on the bottom right corner.
 
