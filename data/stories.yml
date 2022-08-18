@@ -1,0 +1,402 @@
+version: "2.0"
+
+stories:
+
+# /!\ FRENCH PART : /!\
+
+# AIDE :
+
+  - story: Ask for help EMPLOYE french
+    steps:
+      - intent: ask_help_fr
+      - action: utter_help_fr
+
+  - story: Ask for help EMPLOYEUR french
+    steps:
+      - intent: ask_help_employeur_fr
+      - action: utter_help_employeur_fr
+
+
+# QUESTION SUPP :
+
+
+  - story: Question supplémentaire EMPLOYE REPONSE CLAVIER OUI
+    steps:
+      - action: utter_question_supplementaire_fr
+      - intent: affirmation_fr
+      - action: utter_help_fr
+
+  
+  - story: Question supplémentaire EMPLOYE REPONSE CLAVIER NON
+    steps:
+      - action: utter_question_supplementaire_fr
+      - intent: deny_fr
+      - action: utter_goodbye_fr
+
+
+  - story: Question supplémentaire EMPLOYEUR REPONSE CLAVIER OUI
+    steps:
+      - action: utter_question_supplementaire_employeur_fr
+      - intent: affirmation_fr
+      - action: utter_help_employeur_fr
+
+  
+  - story: Question supplémentaire EMPLOYEUR REPONSE CLAVIER NON
+    steps:
+      - action: utter_question_supplementaire_employeur_fr
+      - intent: deny_fr
+      - action: utter_goodbye_fr
+  
+# COTISATION :
+
+  - story: cotisation EMPLOYEUR french path
+    steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+      - action: utter_help_employeur_fr
+      - intent: cotisation_employeur_fr
+      - action: utter_cotisation_employeur_fr
+
+  - story: cotisation EMPLOYE french path
+    steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+      - action: utter_help_fr
+      - intent: cotisation_fr
+      - action: utter_cotisation_fr
+      - intent: age_cotisation_test
+      - action: action_age_cnss_fr
+      - action: utter_question_supplementaire_fr
+
+# ADHESION :
+
+  - story: adhesion EMPLOYE french path (réponse BOUTTON OUI)
+    steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+      - action: utter_help_fr
+      - intent: adhesion_fr
+      - action: utter_adhesion_fr
+      - intent : OUI_adhesion_fr
+      - action: utter_OUI_adhesion_fr
+      - action: utter_question_supplementaire_fr
+
+  - story: adhesion EMPLOYE french path (réponse BOUTTON NON)
+    steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+      - action: utter_help_fr
+      - intent: adhesion_fr
+      - action: utter_adhesion_fr
+      - intent : NON_adhesion_fr
+      - action: utter_NON_adhesion_fr
+      - action: utter_question_supplementaire_fr
+
+  - story: adhesion EMPLOYE french path (réponse CLAVIER OUI)
+    steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+      - action: utter_help_fr
+      - intent: adhesion_fr
+      - action: utter_adhesion_fr
+      - intent : affirmation_fr
+      - action: utter_OUI_adhesion_fr
+      - action: utter_question_supplementaire_fr
+
+  - story: adhesion EMPLOYE french path (réponse CLAVIER NON)
+    steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+      - action: utter_help_fr
+      - intent: adhesion_fr
+      - action: utter_adhesion_fr
+      - intent : deny_fr
+      - action: utter_NON_adhesion_fr
+      - action: utter_question_supplementaire_fr
+
+  - story: adhesion EMPLOYEUR french path (réponse BOUTTON OUI)
+    steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+      - action: utter_help_employeur_fr
+      - intent: adhesion_employeur_fr
+      - action: utter_adhesion_employeur_fr
+      - intent : OUI_adhesion_employeur_fr
+      - action: utter_OUI_adhesion_employeur_fr
+      - action: utter_question_supplementaire_employeur_fr
+
+  - story: adhesion EMPLOYEUR french path (réponse BOUTTON NON)
+    steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+      - action: utter_help_fr
+      - intent: adhesion_employeur_fr
+      - action: utter_adhesion_employeur_fr
+      - intent : NON_adhesion_employeur_fr
+      - action: utter_NON_adhesion_employeur_fr
+      - action: utter_question_supplementaire_employeur_fr
+
+  - story: adhesion EMPLOYEUR french path (réponse CLAVIER OUI)
+    steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+      - action: utter_help_employeur_fr
+      - intent: adhesion_employeur_fr
+      - action: utter_adhesion_employeur_fr
+      - intent : affirmation_fr
+      - action: utter_OUI_adhesion_employeur_fr
+      - action: utter_question_supplementaire_employeur_fr
+
+  - story: adhesion EMPLOYEUR french path (réponse CLAVIER NON)
+    steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+      - action: utter_help_employeur_fr
+      - intent: adhesion_employeur_fr
+      - action: utter_adhesion_employeur_fr
+      - intent : deny_fr
+      - action: utter_NON_adhesion_employeur_fr
+      - action: utter_question_supplementaire_employeur_fr
+
+  # RETRAITE :
+
+  - story: retraite french path
+    steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+      - action: utter_help_fr
+      - intent: retraite_fr
+      - action: utter_retraite_fr
+      - intent: avantages_retraite_fr
+      - action: utter_avantages_retraite_fr
+      - action: utter_question_supplementaire_fr
+  #    - intent: thanks_fr
+  #    - action: utter_thanks_fr
+
+
+
+  # CNSS :
+
+  
+  - story: cnss EMPLOYE french path with additional question
+    steps:
+  #    - intent: greet_fr
+  #   - action: utter_greet_fr
+      - action: utter_help_fr
+      - intent: cnss_fr
+      - action: utter_cnss_fr
+      - action: utter_question_supplementaire_fr
+  #    - intent: affirmation_fr
+  #    - action: utter_help_fr
+  #    - intent: thanks_fr
+  #    - action: utter_thanks_fr
+
+
+  #- story: cnss french path with NO additional question
+  #  steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+  #    - action: utter_help_fr
+  #    - intent: cnss_fr
+  #    - action: utter_cnss_fr
+  #    - action: utter_question_supplementaire_fr
+  #    - intent: deny_fr
+  #    - action: utter_goodbye_fr
+
+
+# /!\ ARABIC PART : /!\
+
+# AIDE :
+
+  - story: Ask for help EMPLOYE arabic
+    steps:
+      - intent: ask_help_ar
+      - action: utter_help_ar
+
+  - story: Ask for help EMPLOYEUR arabuc
+    steps:
+      - intent: ask_help_employeur_ar
+      - action: utter_help_employeur_ar
+
+# QUESTION SUPP :
+
+
+  - story: Question supplémentaire EMPLOYE REPONSE CLAVIER OUI
+    steps:
+      - action: utter_question_supplementaire_ar
+      - intent: affirmation_ar
+      - action: utter_help_ar
+
+  - story: Question supplémentaire EMPLOYE REPONSE CLAVIER NON
+    steps:
+      - action: utter_question_supplementaire_ar
+      - intent: deny_ar
+      - action: utter_goodbye_ar
+
+  
+  - story: Question supplémentaire EMPLOYEUR REPONSE CLAVIER OUI
+    steps:
+      - action: utter_question_supplementaire_employeur_ar
+      - intent: affirmation_ar
+      - action: utter_help_employeur_ar
+
+  
+  - story: Question supplémentaire EMPLOYEUR REPONSE CLAVIER NON
+    steps:
+      - action: utter_question_supplementaire_employeur_ar
+      - intent: deny_ar
+      - action: utter_goodbye_ar
+
+# COTISATION :
+
+  - story: cotisation EMPLOYE arabic path
+    steps:
+      - action: utter_help_ar
+      - intent: cotisation_ar
+      - action: utter_cotisation_ar
+      - intent: age_cotisation_test_ar
+      - action: action_age_cnss_ar
+      - action: utter_question_supplementaire_ar
+
+  - story: cotisation EMPLOYEUR arabic path
+    steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+      - action: utter_help_employeur_ar
+      - intent: cotisation_employeur_ar
+      - action: utter_cotisation_employeur_ar
+
+# ADHESION :
+
+  - story: adhesion EMPLOYE arabic path (réponse BOUTTON OUI)
+    steps:
+  #    - intent: greet_ar
+  #    - action: utter_greet_ar
+      - action: utter_help_ar
+      - intent: adhesion_ar
+      - action: utter_adhesion_ar
+      - intent : OUI_adhesion_ar
+      - action: utter_OUI_adhesion_ar
+      - action: utter_question_supplementaire_ar
+
+  - story: adhesion EMPLOYE arabic path (réponse BOUTTON NON)
+    steps:
+  #    - intent: greet_ar
+  #    - action: utter_greet_ar
+      - action: utter_help_ar
+      - intent: adhesion_ar
+      - action: utter_adhesion_ar
+      - intent : NON_adhesion_ar
+      - action: utter_NON_adhesion_ar
+      - action: utter_question_supplementaire_ar
+
+  - story: adhesion EMPLOYE arabic path (réponse CLAVIER OUI)
+    steps:
+  #    - intent: greet_ar
+  #    - action: utter_greet_ar
+      - action: utter_help_ar
+      - intent: adhesion_ar
+      - action: utter_adhesion_ar
+      - intent : affirmation_ar
+      - action: utter_OUI_adhesion_ar
+      - action: utter_question_supplementaire_ar
+
+  - story: adhesion EMPLOYE arabic path (réponse CLAVIER NON)
+    steps:
+  #    - intent: greet_ar
+  #    - action: utter_greet_ar
+      - action: utter_help_ar
+      - intent: adhesion_ar
+      - action: utter_adhesion_ar
+      - intent : deny_ar
+      - action: utter_NON_adhesion_ar
+      - action: utter_question_supplementaire_ar
+
+  - story: adhesion EMPLOYEUR arabic path (réponse BOUTTON OUI)
+    steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+      - action: utter_help_employeur_ar
+      - intent: adhesion_employeur_ar
+      - action: utter_adhesion_employeur_ar
+      - intent : OUI_adhesion_employeur_ar
+      - action: utter_OUI_adhesion_employeur_ar
+      - action: utter_question_supplementaire_employeur_ar
+
+  - story: adhesion EMPLOYEUR arabic path (réponse BOUTTON NON)
+    steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+      - action: utter_help_ar
+      - intent: adhesion_employeur_ar
+      - action: utter_adhesion_employeur_ar
+      - intent : NON_adhesion_employeur_ar
+      - action: utter_NON_adhesion_employeur_ar
+      - action: utter_question_supplementaire_employeur_ar
+
+  - story: adhesion EMPLOYEUR arabic path (réponse CLAVIER OUI)
+    steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+      - action: utter_help_employeur_ar
+      - intent: adhesion_employeur_ar
+      - action: utter_adhesion_employeur_ar
+      - intent : affirmation_ar
+      - action: utter_OUI_adhesion_employeur_ar
+      - action: utter_question_supplementaire_employeur_ar
+
+  - story: adhesion EMPLOYEUR arabic path (réponse CLAVIER NON)
+    steps:
+  #    - intent: greet_fr
+  #    - action: utter_greet_fr
+      - action: utter_help_employeur_ar
+      - intent: adhesion_employeur_ar
+      - action: utter_adhesion_employeur_ar
+      - intent : deny_ar
+      - action: utter_NON_adhesion_employeur_ar
+      - action: utter_question_supplementaire_employeur_ar
+
+
+
+# RETRAITE :
+
+  - story: retraite arabic path
+    steps:
+  #    - intent: greet_ar
+  #    - action: utter_greet_ar
+      - action: utter_help_ar
+      - intent: retraite_ar
+      - action: utter_retraite_ar
+      - intent: avantages_retraite_ar
+      - action: utter_avantages_retraite_ar
+      - action: utter_question_supplementaire_ar
+  #    - intent: thanks_ar
+  #    - action: utter_thanks_ar
+
+
+# CNSS :
+
+  - story: cnss EMPLOYE arabic path with additional question
+    steps:
+  #   - intent: greet_ar
+  #   - action: utter_greet_ar
+      - action: utter_help_ar
+      - intent: cnss_ar
+      - action: utter_cnss_ar
+      - action: utter_question_supplementaire_ar
+  #    - intent: affirmation_ar
+  #    - action: utter_help_ar
+  #    - intent: thanks_ar
+  #    - action: utter_thanks_ar
+
+
+  #- story: cnss arabic path with NO additional question
+  #  steps:
+  #    - intent: greet_ar
+  #    - action: utter_greet_ar
+  #    - action: utter_help_ar
+  #    - intent: cnss_ar
+  #    - action: utter_cnss_ar
+  #    - action: utter_question_supplementaire_ar
+  #    - intent: deny_ar
+  #    - action: utter_goodbye_ar

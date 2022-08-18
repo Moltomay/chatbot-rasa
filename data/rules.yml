@@ -1,0 +1,145 @@
+version: "2.0"
+
+rules:
+
+- rule: Choix Language
+  steps:
+  - intent: ask_language
+  - action: utter_ask_language
+
+
+#- rule: Test Age Cotisation
+#  steps:
+#  - intent: age_cotisation_test
+#  - action: action_age_cnss
+
+# /!\ FRENCH : /!\
+
+
+- rule: Choix statut FR
+  steps:
+  - intent: language_fr
+  - action: utter_question_statut_fr
+
+- rule: Choix employé FR
+  steps:
+  - intent: employé_fr
+  - action: utter_help_fr
+
+- rule: Choix employeur FR
+  steps:
+  - intent: employeur_fr
+  - action: utter_help_employeur_fr
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye_fr
+  - action: utter_goodbye_fr
+
+
+- rule: Say je vous en prie everytime user says thanks
+  steps:
+  - intent: thanks_fr
+  - action: utter_thanks_fr
+
+
+- rule: Welcome user
+  steps:
+  - intent: greet_fr
+  - action: utter_ask_language
+
+- rule: Adhesion EMPLOYE rule
+  steps:
+  - intent: adhesion_fr
+  - action: utter_adhesion_fr
+
+
+- rule: Adhesion EMPLOYEUR rule
+  steps:
+  - intent: adhesion_employeur_fr
+  - action: utter_adhesion_employeur_fr
+
+- rule: Retraite rule
+  steps:
+  - intent: retraite_fr
+  - action: utter_retraite_fr
+
+#- rule: cnss info rule
+#  steps:
+#  - intent: cnss_fr
+#  - action: utter_cnss_fr
+
+- rule: Cotisation EMPLOYE rule
+  steps:
+  - intent: cotisation_fr
+  - action: utter_cotisation_fr
+
+
+- rule: Cotisation EMPLOYEUR rule
+  steps:
+  - intent: cotisation_employeur_fr
+  - action: utter_cotisation_employeur_fr
+
+
+# /!\ ARABIC : /!\
+
+- rule: Choix statut AR
+  steps:
+  - intent: language_ar
+  - action: utter_question_statut_ar
+
+- rule: Choix employé AR
+  steps:
+  - intent: employé_ar
+  - action: utter_help_ar
+
+- rule: Choix employeur AR
+  steps:
+  - intent: employeur_ar
+  - action: utter_help_employeur_ar
+
+- rule: Welcome user
+  steps:
+  - intent: greet_ar
+  - action: utter_ask_language
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye_ar
+  - action: utter_goodbye_ar
+
+
+- rule: Say je vous en prie everytime user says thanks
+  steps:
+  - intent: thanks_ar
+  - action: utter_thanks_ar
+
+- rule: Adhesion rule
+  steps:
+  - intent: adhesion_ar
+  - action: utter_adhesion_ar
+
+- rule: Retraite rule
+  steps:
+  - intent: retraite_ar
+  - action: utter_retraite_ar
+
+#- rule: cnss info rule
+#  steps:
+#  - intent: cnss_ar
+#  - action: utter_cnss_ar
+
+- rule: Cotisation rule
+  steps:
+  - intent: cotisation_ar
+  - action: utter_cotisation_ar
+
+
+# DEFAULT ANSWERS :
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default_fr
+  - action: utter_default_ar
+

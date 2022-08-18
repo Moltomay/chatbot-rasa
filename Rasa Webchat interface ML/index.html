@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Chatbot CNSS </title>
+    <link rel="icon" type="image/x-icon" href="static/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+  </head>
+  <body>
+    <script>!(function () {
+      let e = document.createElement("script"),
+        t = document.head || document.getElementsByTagName("head")[0];
+      (e.src =
+        "https://cdn.jsdelivr.net/npm/rasa-webchat@1.x.x/lib/index.js"),
+        // Replace 1.x.x with the version that you want
+        (e.async = !0),
+        (e.onload = () => {
+          window.WebChat.default(
+            {
+              customData: { language: "fr" },
+              socketUrl: "http://localhost:5007",
+              initPayload:"/ask_language",
+              title:"Assistant CNSS",
+              // add other props here
+              userBackgroundColor: "#46B1AB;",
+              userTextColor: "white",
+              mainColor: "#46B1AB",
+              inputTextFieldHint: "....",
+            },
+            null
+          );
+        }),
+        t.insertBefore(e, t.firstChild);
+        window.localStorage.clear() // to clear convo after refreshing the window
+    })();
+    </script>
+  </body>
+</html>

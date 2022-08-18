@@ -1,0 +1,21 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background: url("../img/body.png") no-repeat center center fixed;
+  background-size: 1280x820;
+}
+
+/* ============= css related to webchat =============== */
+.rw-conversation-container .rw-messages-container .rw-replies .rw-reply{
+  background-color: #46B1AB;
+  border-color: #46B1AB;
+}
+
+.rw-conversation-container .rw-message .rw-client{
+  background-color: #46B1AB;
+  border-color: #46B1AB; 
+}
+
+.rw-widget-container .rw-launcher .rw-tooltip-body .rw-reply{
+  background-color: #46B1AB;
+  border-color: #46B1AB;
+}

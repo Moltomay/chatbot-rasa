@@ -1,0 +1,418 @@
+version: "2.0"
+
+nlu:
+
+
+# LANGUAGE :
+
+- intent: ask_language
+  examples: |
+    - لغة
+    - changer language
+    - تغيير اللغة
+    - langue
+
+- intent: language_fr
+  examples: |
+    - francais 
+    - langue francaise
+    - language francais
+    - الفرنسية
+
+- intent: language_ar
+  examples: |
+    - العربية 
+    - اللغة العربية
+    - arabe
+
+# /!\ FRENCH PART : /!\
+
+- intent: employé_fr
+  examples: |
+    - employé
+    - salarié
+    - salarie
+
+
+- intent: employeur_fr
+  examples: |
+    - employeur
+    - chef d'entreprise
+    - chef
+
+
+# SALUTATIONS :
+
+- intent: greet_fr
+  examples: |
+    - salut
+    - hey
+    - hello
+    - hi
+    - bonjour
+    - bjr
+    - bonsoir
+    - lu
+    - slt
+
+# REMERCIEMENTS :
+
+- intent: thanks_fr
+  examples: |
+    - Merci
+    - je vous remercie
+    - mrc
+    - merci
+
+
+# AIDE :
+
+- intent: ask_help_fr
+  examples: |
+    - aide employé
+    - question employé
+    - renseignement employé
+
+- intent: ask_help_employeur_fr
+  examples: |
+    - aide employeur
+    - question employeur
+    - renseignement employeur
+
+
+# AU REVOIR :
+
+- intent: goodbye_fr
+  examples: |
+    - au revoir
+    - bye
+    - ciao
+    - a plus
+    - bye bye
+    - je m'en vais
+    - a bientot
+
+
+# AFFIRMATION :
+
+
+- intent: affirmation_fr
+  examples: |
+    - oui
+    - oi
+    - biensur
+    - d'accord
+    - super
+    - correct
+    - bien
+    - yes
+    - yes
+
+# DENY :
+
+
+- intent: deny_fr
+  examples: |
+    - non
+    - jamais
+    - je ne pense pas
+    - je n'aime pas ca
+    - aucun moyen
+    - pas vraiment
+    - no
+
+# COTISATION :
+
+
+- intent: cotisation_fr
+  examples: |
+    - cotise employé
+    - cotisation employé
+    - cotise salarié
+    - cotisation salarié
+    - cotisation salarié
+
+- intent: cotisation_employeur_fr
+  examples: |
+    - je veux cotiser pour mon entreprise
+    - cotise employeur
+    - cotisation entreprise
+    - cotisation employeur
+
+
+- intent: age_cotisation_test
+  examples: |
+    - [15](age) ans
+    - [16](age) ans 
+    - [17](age) ans 
+    - [18](age) ans
+    - [19](age) ans
+    - [20](age) ans
+    - [20](age) ans
+    - [21](age) ans
+
+#- intent: age_cotisation_employé_fr
+#  examples: |
+#    - Mon age
+#    - Age
+
+#- intent: age_cotisation_employeur_fr
+#  examples: |
+#    - Son age
+#    - Age de mon employé
+#    - Age de mon salarié
+
+
+# ADHESION :
+
+
+- intent: adhesion_fr
+  examples: |
+    - adhérer employé 
+    - adhesion employé
+    - adhésion employé
+    - adhérer salarié 
+    - adhesion salarié
+    - adhésion salarié
+
+- intent: adhesion_employeur_fr
+  examples: |
+    - je veux adhérer un employé
+    - adhérer employeur
+    - adhesion employeur
+    - adhésion employeur
+
+
+- intent: OUI_adhesion_fr
+  examples: |
+    - je suis adhérent à la CNSS
+    - je suis declaré à la CNSS
+    - je suis declaré
+    - je suis adhérent
+
+  
+- intent: NON_adhesion_fr
+  examples: |
+    - je ne suis pas adhérent à la CNSS
+    - je ne suis pas declaré à la CNSS
+    - je ne suis pas declaré
+    - je ne suis pas adhérent
+
+- intent: OUI_adhesion_employeur_fr
+  examples: |
+    - Mon employé est adheré
+    - il est adheré
+
+  
+- intent: NON_adhesion_employeur_fr
+  examples: |
+     - Mon employé n'est pas adheré
+     - il n'est pas adheré
+
+
+
+# RETRAITE :
+
+
+- intent: retraite_fr
+  examples: |
+    - je suis retraité
+    - retraite
+    - retraité
+    - je ne travaille plus
+    - je suis à la retraite
+
+- intent: avantages_retraite_fr
+  examples: |
+    - avantages retraite  
+    - avantages de ma retraite
+    - Je veux connaitre mes avantages de retraite
+
+
+# CNSS :
+
+
+- intent: cnss_fr
+  examples: |
+    - c'est quoi la cnss
+    - quelle est la cnss
+    - je veux des informations sur la cnss
+    - qui est la cnss
+    - qui etes-vous
+
+# /!\ ARABIC PART : /!\
+
+- intent: employé_ar
+  examples: |
+    - الموظف
+    - موظف
+
+
+- intent: employeur_ar
+  examples: |
+    - صاحب العمل
+    - ريادي
+
+
+- intent: greet_ar
+  examples: |
+    - salam
+    - salam alikoum
+    - صباح الخير
+    - سلام
+    - السلام عليكم
+    - مرحبًا
+
+
+# REMERCIEMENTS :
+
+- intent: thanks_ar
+  examples: |
+    - chokran
+    - choukran
+    -شكرا لكم
+    -شكرا
+
+
+# AIDE :
+
+- intent: ask_help_ar
+  examples: |
+    - مساعدة الموظف
+    - سؤال الموظف
+    - معلومات الموظف
+
+- intent: ask_help_employeur_ar
+  examples: |
+    - مساعدة صاحب العمل
+    - سؤال صاحب العمل
+    - معلومات صاحب العمل
+
+
+# GOODBYE :
+
+- intent: goodbye_ar
+  examples: |
+    - إلى اللقاء
+    - وداعا
+    - اتمنى لك يوم جيد
+    - مع سلامة
+
+# AFFIRMATION :
+
+- intent: affirmation_ar
+  examples: |
+    - نعم
+    - طبعا
+    - تمام
+    - صيح
+    - حسن
+    
+
+# DENY :
+
+- intent: deny_ar
+  examples: |
+    - لا
+    - أبدا
+    - أنا لا أعتقد ذلك
+    - لا احب هذا
+    - مستحيل
+    - ليس حقيقيا
+    - la
+
+# COTISATION :
+
+- intent: age_cotisation_test_ar
+  examples: |
+    - [15](سن) سنة
+    - [16](سن) سنة
+    - [17](سن) سنة
+    - [18](سن) سنة
+    - [19](سن) سنة
+    - [20](سن) سنة
+    
+
+- intent: cotisation_ar
+  examples: |
+    - مساهمة الموظف
+    - اريد ان اساهم موظف
+
+
+- intent: cotisation_employeur_ar
+  examples: |
+    - أريد المساهمة في شركتي
+    - مساهمة صاحب العمل
+    - مساهمة الشركة
+
+#- intent: age_cotisation_employé_ar
+#  examples: |
+#    - عمري
+#    - سن
+
+#- intent: age_cotisation_employeur_ar
+#  examples: |
+#    - عمره
+#    - عمر الموظف الخاص بي
+    
+
+# ADHESION :
+
+- intent: adhesion_ar
+  examples: |
+    - انضم للموظف
+    - عضوية الموظف
+
+- intent: adhesion_employeur_ar
+  examples: |
+    - اريد تسجيل موظف
+    - عضوية صاحب العمل
+
+- intent: OUI_adhesion_ar
+  examples: |
+    - CNSS أنا عضو في
+    - CNSS تم إعلاني في 
+    - أنا معلنة
+    - أنا عضو
+
+  
+- intent: NON_adhesion_ar
+  examples: |
+    - CNSS أنا لست عضوا في
+    - CNSS لم يتم التصريح لي لدى
+    - أنا غير مصرح لي
+    - انا لست عضوا
+
+- intent: OUI_adhesion_employeur_ar
+  examples: |
+    - الموظف الخاص بي مشترك
+    - لقد انضم
+  
+- intent: NON_adhesion_employeur_ar
+  examples: |
+    - لم ينضم
+    - موظفي غير مشترك
+
+# RETRAITE :
+
+- intent: retraite_ar
+  examples: |
+    - انا متقاعد
+    - تقاعد
+    - متقاعد
+
+- intent: avantages_retraite_ar
+  examples: |
+    - استحقاقات التقاعد 
+    - فوائد تقاعدي
+    - أريد أن أعرف مزايا التقاعد الخاصة بي
+
+
+# CNSS :
+
+- intent: cnss_ar
+  examples: |
+    - ما هو cnss
+    - اريد معلومات عن cnss
+    - من هو cnss
+    -من انت 
