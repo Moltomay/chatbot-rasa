@@ -1,0 +1,391 @@
+version: "2.0"
+  
+intents:
+  - ask_language
+  - language_fr
+  - employé_fr
+  - employeur_fr
+  - greet_fr
+  - cotisation_fr
+  - cotisation_employeur_fr
+  - affirmation_fr
+  - deny_fr
+  - adhesion_fr
+  - adhesion_employeur_fr
+  - OUI_adhesion_fr
+  - OUI_adhesion_employeur_fr
+  - NON_adhesion_fr
+  - NON_adhesion_employeur_fr
+  - retraite_fr
+  - avantages_retraite_fr
+  - cnss_fr
+  - goodbye_fr
+  - thanks_fr
+  - ask_help_fr
+  - ask_help_employeur_fr
+  - language_ar
+  - employé_ar
+  - employeur_ar
+  - greet_ar
+  - cotisation_ar
+  - cotisation_employeur_ar
+  - affirmation_ar
+  - deny_ar
+  - adhesion_ar
+  - adhesion_employeur_ar
+  - OUI_adhesion_ar
+  - OUI_adhesion_employeur_ar
+  - NON_adhesion_ar
+  - NON_adhesion_employeur_ar
+  - retraite_ar
+  - avantages_retraite_ar
+  - cnss_ar
+  - goodbye_ar
+  - thanks_ar
+  - ask_help_ar
+  - ask_help_employeur_ar
+  - age_cotisation_test
+  - age_cotisation_test_ar
+
+
+entities:
+  - age
+  - سن
+
+slots :
+  AgeTest:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+
+responses:
+
+
+#  utter_greet_fr:
+#  - text: "Bonjour comment ca va?"
+
+# CHOIX LANGUAGE :
+
+  utter_ask_language:
+  - text: "ما اللغة التي تريد استخدامها؟"
+    buttons:
+    - title: "العربية"
+      payload: '/language_ar'
+    - title: "الفرنسية"
+      payload: '/language_fr'
+
+# /!\ FRENCH PART : /!\
+
+
+# QUESTION EMPLOYE / EMPLOYEUR :
+
+  utter_question_statut_fr:
+  - text: "Êtes-vous un salarié ou un employeur ?" 
+    buttons:
+    - title: "Employé"
+      payload: '/employé_fr'
+    - title: "Employeur"
+      payload: '/employeur_fr'
+
+# REMERCIEMENTS :
+
+  utter_thanks_fr:
+  - text: "Je vous en prie" 
+
+
+# SALUTATIONS :
+
+  utter_goodbye_fr:
+  - text: "A la prochaine. J'espère avoir pu vous aider."
+
+# AIDE EMPLOYE :
+
+  utter_help_fr:
+  - text: "Bonjour, je suis CNSS le robot de la CNSS. En quoi puis-je vous aider ?"
+    buttons:
+    - title: "Je veux adhérer"
+      payload: '/adhesion_fr'
+    - title: "Je cotise à la CNSS"
+      payload: '/cotisation_fr'
+    - title: "Je suis retraité"
+      payload: '/retraite_fr'
+    - title: "Qui sommes-nous ?"
+      payload: '/cnss_fr'
+
+
+# AIDE EMPLOYEUR :
+
+  utter_help_employeur_fr:
+  - text: "Bonjour, je suis CNSS le robot de la CNSS. En quoi puis-je vous aider ?"
+    buttons:
+    - title: "Je veux adhérer un de mes employés"
+      payload: '/adhesion_employeur_fr'
+    - title: "Je cotise à la CNSS pour mon entreprise"
+      payload: '/cotisation_employeur_fr'
+
+
+# COTISATION EMPLOYE :
+
+
+#  utter_cotisation_fr:
+#  - text: "Comment puis-je vous aider avec votre cotisation ?"
+#    buttons:
+#    - title: "Boutton 1"
+#      payload: '/goodbye_fr'
+#    - title: "Boutton 2"
+#      payload: '/goodbye_fr'
+#    - title: "Boutton 3"
+#      payload: '/goodbye_fr'
+
+  utter_cotisation_fr:
+  - text: "Quel âge avez-vous ?"
+    
+# ADHESION EMPLOYE :
+
+  utter_adhesion_fr:
+  - text: "Êtes-vous actuellement déclaré à la CNSS ?"
+    buttons:
+    - title: "Oui"
+      payload: '/OUI_adhesion_fr'
+    - title: "Non"
+      payload: '/NON_adhesion_fr'
+
+  utter_OUI_adhesion_fr:
+  - text: "Vous n'avez donc pas besoin d'adhérer à nouveau"
+
+  utter_NON_adhesion_fr:
+  - text: "Vous devez adhérer à travers une agence de la CNSS ou notre site Web"
+
+# COTISATION EMPLOYEUR :
+
+  utter_cotisation_employeur_fr:
+  - text: "Comment puis-je vous aider avec votre cotisation d'entreprise ?"
+    buttons:
+    - title: "Boutton 1"
+      payload: '/goodbye_fr'
+    - title: "Boutton 2"
+      payload: '/goodbye_fr'
+    - title: "Boutton 3"
+      payload: '/goodbye_fr'
+
+# ADHESION EMPLOYEUR :
+
+  utter_adhesion_employeur_fr:
+  - text: "Votre employé est-il declaré actuellement ?"
+    buttons:
+    - title: "Oui"
+      payload: '/OUI_adhesion_employeur_fr'
+    - title: "Non"
+      payload: '/NON_adhesion_employeur_fr'
+
+  utter_OUI_adhesion_employeur_fr:
+  - text: "Vous n'avez donc pas besoin de l'adhérer à nouveau"
+
+  utter_NON_adhesion_employeur_fr:
+  - text: "Vous devez l'adhérer à travers une agence de la CNSS"
+
+# RETRAITE :
+
+  utter_retraite_fr:
+  - text: "Comment puis-je vous aider avec votre retraite ?"
+    buttons:
+    - title: "Je veux connaitre mes avantages de retraite"
+      payload: '/avantages_retraite_fr'
+
+
+  utter_avantages_retraite_fr:
+  - text: "Vous avez beaucoup d'avantages en tant que retraité(e),Pour plus d'informations réferez-vous à cette vidéo : https://www.youtube.com/watch?v=FDm4QbEPbVY"
+
+# CNSS :
+
+  utter_cnss_fr:
+  - text: "La caisse nationale de sécurité sociale ou CNSS est un établissement public marocain, à vocation de sécurité sociale créé en 1959 et placé sous la tutelle administrative du ministre chargé de l'emploi."
+
+# QUESTION SUPP :
+
+  utter_question_supplementaire_fr:
+  - text: "Avez-vous une autre question ?"
+    buttons:
+    - title: "Oui"
+      payload: '/ask_help_fr'
+    - title: "Non"
+      payload: '/goodbye_fr'
+
+  utter_question_supplementaire_employeur_fr:
+  - text: "Avez-vous une autre question concernant votre entreprise ?"
+    buttons:
+    - title: "Oui"
+      payload: '/ask_help_employeur_fr'
+    - title: "Non"
+      payload: '/goodbye_fr'
+
+# /!\ ARABIC PART : /!\
+
+# QUESTION EMPLOYE / EMPLOYEUR :
+
+  utter_question_statut_ar:
+  - text: "هل انت موظف او صاحب عمل؟" 
+    buttons:
+    - title: "الموظف"
+      payload: '/employé_ar'
+    - title: "صاحب العمل"
+      payload: '/employeur_ar'
+
+# REMERCIEMENTS :
+
+  utter_thanks_ar:
+  - text: "على الرحب و السعة" 
+
+# GOODBYE :
+
+  utter_goodbye_ar:
+  - text: "إلى اللقاءآمل أن أكون قادرًا على مساعدتك"
+
+# AIDE EMPLOYE :
+
+  utter_help_ar:
+  - text: "مرحبًا ، كيف يمكنني المساعدة؟"
+    buttons:
+    - title: "أريد الانضمام"
+      payload: '/adhesion_ar'
+    - title: "CNSS أنا أساهم في"
+      payload: '/cotisation_ar'
+    - title: "انا متقاعد"
+      payload: '/retraite_ar'
+    - title: "من نحن ؟"
+      payload: '/cnss_ar'
+
+# AIDE EMPLOYEUR :
+
+  utter_help_employeur_ar:
+  - text: "مرحبًا ، كيف يمكنني المساعدة؟"
+    buttons:
+    - title: "أرغب في الانضمام إلى أحد موظفيي"
+      payload: '/adhesion_employeur_ar'
+    - title: "أنا أساهم لشركتي"
+      payload: '/cotisation_employeur_ar'
+
+
+# COTISATION EMPLOYE :
+
+
+#  utter_cotisation_ar:
+#  - text: "كيف يمكنني مساعدتك في مستحقاتك؟"
+#    buttons:
+#    - title: "زر 1"
+#      payload: '/goodbye_ar'
+#    - title: "زر 2"
+#      payload: '/goodbye_ar'
+#    - title: "زر 3"
+#      payload: '/goodbye_ar'
+
+  utter_cotisation_ar:
+  - text: "كم عمرك ؟"
+
+# ADHESION EMPLOYE :
+
+
+  utter_adhesion_ar:
+  - text: "؟CNSS هل أنت مسجل حاليًا في"
+    buttons:
+    - title: "نعم"
+      payload: '/OUI_adhesion_ar'
+    - title: "لا"
+      payload: '/NON_adhesion_ar'
+
+  utter_OUI_adhesion_ar:
+  - text: "لذلك لا تحتاج إلى الانضمام مرة أخرى"
+
+  utter_NON_adhesion_ar:
+  - text: "يجب عليك الانضمام من خلال وكالة CNSS أو موقعنا على الإنترنت"
+
+  # COTISATION EMPLOYEUR :
+
+  utter_cotisation_employeur_ar:
+  - text: "كيف يمكنني مساعدتك في مستحقات شركتك؟"
+    buttons:
+    - title: "زر 1"
+      payload: '/goodbye_ar'
+    - title: "زر 2"
+      payload: '/goodbye_ar'
+    - title: "زر 3"
+      payload: '/goodbye_ar'
+
+# ADHESION EMPLOYEUR :
+
+  utter_adhesion_employeur_ar:
+  - text: "هل موظفك معلن حاليا؟"
+    buttons:
+    - title: "نعم"
+      payload: '/OUI_adhesion_employeur_ar'
+    - title: "لا"
+      payload: '/NON_adhesion_employeur_ar'
+
+  utter_OUI_adhesion_employeur_ar:
+  - text: "لذلك لا تحتاج إلى الانضمام إليها مرة أخرى"
+
+  utter_NON_adhesion_employeur_ar:
+  - text: "يجب عليك الانضمام إليها من خلال وكالة CNSS"
+
+
+# RETRAITE :
+
+
+  utter_retraite_ar:
+  - text: "كيف يمكنني مساعدتك في التقاعد؟"
+    buttons:
+    - title: "أريد أن أعرف مزايا التقاعد الخاصة بي"
+      payload: '/ avantages_retraite_ar'
+
+  utter_avantages_retraite_ar:
+  - text: "لديك العديد من المزايا كمتقاعد ، لمزيد من المعلومات راجع هذا الفيديو: https://www.youtube.com/watch?v=FDm4QbEPbVY"
+  
+  
+  # CNSS :
+
+
+  utter_cnss_ar:
+  - text: "الصندوق الوطني للضمان الاجتماعي (CNSS) هو مؤسسة عمومية مغربية تأسست في عام 1959، تتجلى مهمتها في ضمان الأمن الاجتماعي للطبقة الشغيلة تحت الإشراف الإداري لوزارة التشغيل والشؤون الاجتماعية. ويعد الصندوق نظاماً للضمان الاجتماعي إلزامي بالنسبة للعاملين في مجالات الصناعة والخدمات والمهن في المغرب، حيث يضمن لهم الحماية ضد مخاطر الحد من الأجرة في حالة المرض والأمومة والعجز والشيخوخة، بٱستخدمه للمستحقات التي يتم اقتطاعها سلفاً طيلة مدة العمل وشهريا من أجرة الأجير حيث تصبح بمثابة تعويضات عائلية. كما بمجرد الوفاة يمكن لجل العائلات المنخرطين بها الاستفادة من معاش الورثة ومنحة الوفاة.المدير العام الحالي بالنياابة للصندوق الوطني للضمان الاجتماعي هو عبد اللطيف مرتقي"
+
+
+# QUESTION SUPP  :
+
+  utter_question_supplementaire_ar:
+  - text: "هل لديك سؤال أخر؟"
+    buttons:
+    - title: "نعم"
+      payload: '/ask_help_ar'
+    - title: "لا"
+      payload: '/goodbye_ar'
+
+  utter_question_supplementaire_employeur_ar:
+  - text: "هل لديك سؤال آخر حول مؤسستك"
+    buttons:
+    - title: "نعم"
+      payload: '/ask_help_employeur_ar'
+    - title: "لا"
+      payload: '/goodbye_ar'
+
+
+# REPONSES PAR DEFAUT :
+
+  utter_default_fr:
+  - text: "Je n'ai pas compris votre message, quelle language souhaitez-vous utiliser ?"
+
+  utter_default_ar:
+  - text: لم أفهم رسالتك، ما اللغة التي تريد استخدامها؟
+    buttons:
+    - title: "العربية"
+      payload: '/language_ar'
+    - title: "الفرنسية"
+      payload: '/language_fr'
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+  - action_age_cnss_fr
+  - action_age_cnss_ar
